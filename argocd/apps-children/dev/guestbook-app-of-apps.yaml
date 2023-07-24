@@ -11,6 +11,6 @@ spec:
     name: dev-cluster
   project: default
   source:
-    path: argocd/argocd/projects/dev/guestbook
+    path: argocd/projects/dev/guestbook
     repoURL: https://github.com/JustasBud/kubernetes
     targetRevision: HEAD

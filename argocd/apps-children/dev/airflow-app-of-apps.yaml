@@ -11,6 +11,6 @@ spec:
     name: dev-cluster
   project: default
   source:
-    path: argocd/argocd/projects/dev/airflow-stable
+    path: argocd/projects/dev/airflow-stable
     repoURL: https://github.com/JustasBud/kubernetes
     targetRevision: HEAD
