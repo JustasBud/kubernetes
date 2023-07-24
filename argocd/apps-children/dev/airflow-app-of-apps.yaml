@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: airflow-stable
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io #if deleted, deletes entire stack, i.e. not just the app
+spec:
+  destination:
+    namespace: airflow-stable
+    name: dev-cluster
+  project: default
+  source:
+    path: argocd/argocd/projects/dev/airflow-stable
+    repoURL: https://github.com/JustasBud/kubernetes
+    targetRevision: HEAD
