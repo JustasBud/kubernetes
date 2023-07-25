@@ -14,3 +14,6 @@ spec:
     path: argocd/apps-children/dev
     repoURL: https://github.com/JustasBud/kubernetes
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
