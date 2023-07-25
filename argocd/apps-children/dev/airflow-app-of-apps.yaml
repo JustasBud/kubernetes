@@ -8,7 +8,8 @@ metadata:
 spec:
   destination:
     namespace: airflow-stable
-    name: dev-cluster
+    # name: dev-cluster
+    name: in-cluster
   project: default
   source:
     path: argocd/projects/dev/airflow-stable
