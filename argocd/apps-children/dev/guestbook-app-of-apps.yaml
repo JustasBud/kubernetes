@@ -15,3 +15,6 @@ spec:
     path: argocd/projects/dev/guestbook
     repoURL: https://github.com/JustasBud/kubernetes
     targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
