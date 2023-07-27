@@ -1,1 +1,1 @@
-echo 'hi'
+docker run 'hello-world'
