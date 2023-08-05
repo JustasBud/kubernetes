@@ -31,6 +31,9 @@ argocd account update-password # to update pw
 kubectl config set-context --current --namespace=argocd
 
 
+
+argocd login 127.0.0.1:8080
+
 argocd app create root-appbundle-app-dev --repo https://github.com/JustasBud/kubernetes.git --path argocd --dest-server https://kubernetes.default.svc --dest-namespace default
 argocd app sync root-appbundle-app-dev
 

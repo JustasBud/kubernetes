@@ -10,5 +10,7 @@ az aks get-credentials --resource-group xxxxxx-rg --name mycluster --subscriptio
 kubectl get endpoints
 
 
-
-
+# Create PW for Ubuntu RDP sessions:
+# If you created a password for your user account when you created your VM, skip this step. 
+# If you only use SSH key authentication and don't have a local account password set, specify a password before you use xrdp to log in to your VM.
+sudo passwd azureuser
