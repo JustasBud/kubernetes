@@ -1,2 +1,3 @@
 # Paste below to custom data field when deploying Azure VM - this will deploy the basic tools (docker, kubectl, etc.) 
+#!/bin/bash
 bash <(curl -s https://raw.githubusercontent.com/JustasBud/kubernetes/main/VM/Provisioning%20Scripts/Azure.sh)

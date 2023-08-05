@@ -1,4 +1,10 @@
 
+# To run docker without sudo:
+sudo usermod -aG docker $USER 
+newgrp docker # no need for log out - to test, otherwise log out and log back in
+
+
+
 # Install maven for building Apache Spark on the main VM
 sudo apt install maven
 
