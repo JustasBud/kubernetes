@@ -35,7 +35,9 @@ kubectl config set-context --current --namespace=argocd
 
 argocd login 127.0.0.1:8080
 
-argocd app create root-appbundle-app-dev --repo https://github.com/JustasBud/kubernetes.git --path argocd --dest-server https://kubernetes.default.svc --dest-namespace default
+argocd app create root-appbundle-app-dev --repo https://github.com/JustasBud/kubernetes.git --path argocd --dest-name in-cluster --dest-namespace default #use name or server, not both,
+#  as defined in app definition --dest-server https://kubernetes.default.svc 
+
 argocd app sync root-appbundle-app-dev
 
 # deploy example app manually, if not using app-of-apps:
