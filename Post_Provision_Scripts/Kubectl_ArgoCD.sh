@@ -19,7 +19,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 
 # use Service Type Load Balancer, Ingress or Port Fw as below: # https://argo-cd.readthedocs.io/en/stable/getting_started/
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 8080:443 # add the following to enable remote access, otherwise localhost only --address='0.0.0.0'
+
 
 
 
