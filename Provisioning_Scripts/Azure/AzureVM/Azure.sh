@@ -61,3 +61,6 @@ echo xfce4-session >~/.xsession
 
 sudo service xrdp restart
 
+# install browser for rdp sessions - does not come with one when xrdp is used:
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
