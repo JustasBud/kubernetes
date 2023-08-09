@@ -4,13 +4,19 @@
 
 
 
-# Install kubernetes dashboard
+# Install kubernetes dashboard (without ArgoCD)
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
 
 # Access kubernetes dashboard
 
 kubectl proxy
+
+
+
+kubectl apply -f dashboard-adminuser.yaml
+
+
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 
