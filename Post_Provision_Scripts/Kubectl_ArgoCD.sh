@@ -53,8 +53,15 @@ argocd app sync root-appbundle-app-dev
 
 # Access kubernetes dashboard
 
-kubectl proxy
+kubectl proxy #only works on local machine
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+
+#  use below for remote access:
+kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 8443:443 --address 0.0.0.0
+# Access dashboard via:
+https://external.ip.address:8443
+
 
 
 kubectl -n kubernetes-dashboard create token admin-user
