@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: banana
+  name: applebanana
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io #if deleted, deletes entire stack, i.e. not just the app
 spec:
   destination:
-    namespace: banana
+    namespace: applebanana
     # name: dev-cluster
     name: in-cluster
   project: default
