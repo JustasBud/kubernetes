@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-controller
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io #if deleted, deletes entire stack, i.e. not just the app
+spec:
+  destination:
+    namespace: nginx-controller
+    # name: dev-cluster
+    name: in-cluster
+  project: default
+  source:
+    path: argocd/projects/dev/nginx-controller
+    repoURL: https://github.com/JustasBud/kubernetes
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
