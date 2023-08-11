@@ -4,6 +4,7 @@ metadata:
   name: example-ingress
   annotations:
     ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/16"
 spec:
   ingressClassName: nginx
   rules:
