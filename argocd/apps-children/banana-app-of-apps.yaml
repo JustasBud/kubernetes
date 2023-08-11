@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: banana
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io #if deleted, deletes entire stack, i.e. not just the app
+spec:
+  destination:
+    namespace: banana
+    # name: dev-cluster
+    name: in-cluster
+  project: default
+  source:
+    path: argocd/projects/dev/nginxTestApps/banana
+    repoURL: https://github.com/JustasBud/kubernetes
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
