@@ -7,7 +7,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io #if deleted, deletes entire stack, i.e. not just the app
 spec:
   destination:
-    namespace: applebanana
+    namespace: applebanana #has to be deployed in the same namespace as the exposed app
     # name: dev-cluster
     name: in-cluster
   project: default
